@@ -136,9 +136,6 @@ pipeline {
         
         stage('Push to Registry') {
             agent any
-            when {
-                branch 'main'
-            }
             steps {
                 echo '📤 Pushing Docker image to registry...'
                 script {
@@ -152,9 +149,6 @@ pipeline {
         
         stage('Deploy') {
             agent any
-            when {
-                branch 'main'
-            }
             steps {
                 echo '🚀 Deploying application...'
                 script {
